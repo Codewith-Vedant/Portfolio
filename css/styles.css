@@ -1,0 +1,222 @@
+body {
+  font-family: 'Assistant', sans-serif;
+  background-color: black;
+  color: #D9D9D9;
+  margin: 0;
+}
+h1, h2 {
+  font-family: 'Girassol', cursive;
+}
+/* Progress Bar Overlay */
+#progress-overlay {
+  background-color: #2A2A2A;
+  display: flex;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  background: #2A2A2A;
+}
+#progress-bar {
+  width: 70%;
+  height: 10px;
+  background-color: #444444;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #FF4581, #7445FF);
+  transition: width 0.2s ease;
+}
+/* Main Content Wrapper (Initially Hidden) */
+#main-content {
+  display: none;
+}
+
+#main {
+  display: block;
+}
+
+.hover-effect:hover {
+  transform: scale(1.1);
+  color: #7445FF;
+  font-size: 1.1rem;
+}
+.timeline {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #FF4581, #7445FF);
+  margin: 4rem 0;
+}
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(to right, #FF4581, #7445FF);
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.internship {
+  position: absolute;
+  width: 300px;
+  font-size: 0.9rem;
+}
+.internship-title {
+  color: #7445FF;
+  font-weight: bold;
+}
+.internship-company {
+  color: #FF4581;
+}
+.internship-date {
+  color: #FFFFFF;
+}
+.internship-points {
+  color: gray;
+}
+.box1{
+    border: 1px;
+    width: 40%;
+    height: 30%;
+    margin-left: 80px;
+}
+.loading-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+}
+@keyframes scale-fade {
+0% {
+opacity: 1;
+transform: scale(1);
+}
+100% {
+opacity: 0;
+transform: scale(20); /* Image scales up */
+}
+}
+
+.image-container {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.form-container {
+  flex: 1;
+  margin-left: 10%;
+}
+
+.form-container h1 {
+  color: white;
+  font-family: 'Girassol', cursive;
+  font-size: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px;
+  border-radius: 4px;
+  font-size: 16px;
+  color: black;
+}
+
+.button1 {
+  display: inline-block;
+  background-color: #007BFF;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button1:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+
+/* For small screens (mobile L - 425px and below) */
+@media (max-width: 435px) {
+  nav{
+    align-items: center;
+    flex-direction: row;
+  }
+
+  nav a{
+    font-size: 0.8rem;
+  }
+
+  .contact-container {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  .image-container {
+    padding: 15px;
+  }
+}
+
+/* For large screens (4K - 2560px and above) */
+@media (min-width: 2560px) {
+  .contact-container {
+    max-width: 1800px;
+    padding: 40px;
+  }
+
+  .form-container {
+    padding: 40px;
+  }
+
+  .image-container {
+    padding: 40px;
+  }
+
+  input, textarea, button {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  button {
+    font-size: 20px;
+  }
+}
