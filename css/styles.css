@@ -67,7 +67,7 @@ h1, h2 {
   width: 300px;
   font-size: 0.9rem;
   opacity: 0; /* Initially hidden */
-  transition: opacity 1s ease; /* Smooth fade-in/out animation */
+  transition: opacity 2s ease; /* Smooth fade-in/out animation */
 }
 
 .internship.visible {
@@ -123,6 +123,14 @@ h1, h2 {
 
 .move-right {
   transform: translateX(100px);
+}
+
+footer img {
+  transition: transform 0.7s ease;
+}
+
+footer img:hover {
+  transform: scale(1.5);
 }
 
 @keyframes scale-fade {
