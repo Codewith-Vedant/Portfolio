@@ -66,7 +66,14 @@ h1, h2 {
   position: absolute;
   width: 300px;
   font-size: 0.9rem;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease; /* Smooth fade-in/out animation */
 }
+
+.internship.visible {
+  opacity: 1; /* Fully visible when in the viewport */
+}
+
 .internship-title {
   color: #7445FF;
   font-weight: bold;
@@ -85,6 +92,7 @@ h1, h2 {
     width: 40%;
     height: 30%;
     margin-left: 80px;
+    transition: transform 0.5s ease, opacity 0.5s ease;;
 }
 .loading-image {
   width: 150px;
@@ -93,6 +101,30 @@ h1, h2 {
   object-fit: cover;
   position: relative;
 }
+
+.l1{
+  transition: opacity 0.5s ease;;
+}
+
+.l2{
+  transition: opacity 0.5s ease;;
+}
+.img1{
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.move-left {
+  transform: translateX(-100px);
+}
+
+.move-right {
+  transform: translateX(100px);
+}
+
 @keyframes scale-fade {
 0% {
 opacity: 1;

@@ -46,3 +46,67 @@ function sendEmail(event) {
   // Optionally, display a message to the user
   alert('Your email client will open to send the message.');
 }
+
+// Helper function to check if an element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+// Select all internship elements
+const internships = document.querySelectorAll('.internship');
+
+// Add an event listener for scrolling
+window.addEventListener('scroll', () => {
+  internships.forEach(internship => {
+    if (isInViewport(internship)) {
+      // Add the visible class if in the viewport
+      internship.classList.add('visible');
+    } else {
+      // Remove the visible class if out of the viewport
+      internship.classList.remove('visible');
+    }
+  });
+});
+
+// Trigger the scroll event on page load to handle elements in the initial viewport
+window.dispatchEvent(new Event('scroll'));
+
+// Select the elements
+// Select the elements
+// Select the elements
+const box = document.querySelector('.box1');
+const image = document.querySelector('.img1');
+const verticalLine = document.querySelector('.l1');
+const horizontalLine = document.querySelector('.l2');
+
+// Function to handle scroll-based animations
+const handleScroll = () => {
+  const scrollY = window.scrollY; // Current scroll position
+  const windowHeight = window.innerHeight; // Height of the viewport
+
+  // Calculate the fade-out effect based on scroll position
+  const opacity = Math.max(0, 1 - scrollY / (windowHeight / 2));
+
+  // Calculate the horizontal and vertical movements
+  const translateX = Math.min(scrollY / 5, 100); // Limits the movement to 100px
+  const scale = Math.max(0, opacity); // Shrinks lines proportionally to opacity
+
+  // Apply styles dynamically for smooth animation
+  box.style.opacity = opacity;
+  box.style.transform = `translateX(-${translateX}px)`;
+
+  verticalLine.style.opacity = opacity;
+  verticalLine.style.transform = `scaleY(${scale})`; // Shrinks the vertical line
+
+  horizontalLine.style.opacity = opacity;
+  horizontalLine.style.transform = `scaleX(${scale})`; // Shrinks the horizontal line
+
+  image.style.opacity = opacity;
+  image.style.transform = `translateX(${translateX}px)`;
+};
+
+// Add scroll event listener with `requestAnimationFrame` for smoother performance
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(handleScroll);
+});
