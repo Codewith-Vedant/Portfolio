@@ -260,3 +260,166 @@ input, textarea {
     font-size: 20px;
   }
 }
+
+.link{
+  opacity: 1;
+  transform: none;
+  backdrop-filter: blur(.1rem);
+  box-shadow: 0 0 0.3rem 0.01rem aqua;
+  box-sizing: border-box;
+  flex-direction: column;
+  transition: all .2s ease-out;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e1e;
+  border: 1px solid #282828;
+  border-radius: 8px;
+  flex-direction: column;
+  height: 150px;
+  padding: 20px;
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease;
+  width: 150px;
+  overflow: hidden;
+}
+
+.link:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 0.3rem 0.01rem aqua;
+}
+
+/* Responsive styles for devices with width below 1024px */
+@media (max-width: 1024px) {
+  nav.flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav.flex div:nth-child(2) {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #main {
+    padding: 0 16px;
+  }
+
+  .flex[style*="align-items: center; flex-direction: column;"] {
+    text-align: center;
+  }
+
+  .flex[style*="align-items: center; flex-direction: row;"] {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .link {
+    margin: 8px;
+    flex: 1 0 100px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  footer {
+    padding: 16px;
+    text-align: center;
+  }
+
+  footer h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .box1 {
+    margin-right: 0px;
+    margin-left: 12px;
+    max-width: 95%;
+    max-height: 40%;
+  }
+  
+  .img1 {
+    margin-right: 0;
+    margin-left: 0;
+    width: 120px;
+    height: 120px;
+  }
+
+  .l2 {
+    width: 95%;
+  }
+
+  .timeline {
+    margin: 1rem auto;
+  }
+
+  .internship {
+    width: 80%;
+    font-size: 0.8rem;
+    position: static; /* Stack vertically */
+    margin: 10px auto;
+  }
+
+  .internship-title, .internship-company, .internship-date {
+    text-align: center;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer img {
+    margin: 5px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .box1 p {
+    font-size: 0.8rem;
+  }
+
+  .text-center h1, .text-center h2 {
+    font-size: 1.5rem;
+  }
+
+  .img1 {
+    margin-right: 0%;
+    width: 700px;
+    height: 150px;
+  }
+
+  .timeline-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .internship {
+    width: 90%;
+  }
+
+  footer img {
+    width: 25px;
+    height: auto;
+  }
+}
