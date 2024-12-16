@@ -309,6 +309,150 @@ input, textarea {
   overflow: hidden;
 }
 
+/* Main container perspective for the flip effect */
+.link2-container {
+  perspective: 1000px; /* Enables 3D flip effect */
+  width: 300px;
+  height: 350px;
+}
+
+/* Flip effect for the link2 container */
+.link2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s; /* Smooth rotation */
+}
+
+/* Trigger the flip on hover */
+.link2-container:hover .link2 {
+  transform: rotateY(180deg); /* Rotate to show the back side */
+}
+
+/* Front side (default view) */
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the front side when flipped */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #282828;
+  border-radius: 8px;
+}
+
+/* Back side (hidden initially) */
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #282828;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Typewriter effect container */
+.typewriter-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%; /* Ensure it takes up available space */
+}
+
+/* Typewriter animation for each line */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00ffff;
+  visibility: hidden; /* Start hidden */
+}
+
+/* Animations for individual lines */
+.link2-container:hover .line1 {
+  visibility: visible; /* Make visible during animation */
+  animation: typing 2s steps(30, end), blink-caret 1s step-end infinite;
+}
+
+/* Ensure the animation stops when the text is fully displayed */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 67%;
+  }
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00ffff;
+  }
+}
+
+
+/* Button styling */
+.view-more-btn {
+  align-self: flex-end;
+  padding: 10px 15px;
+  background-color: #00ffff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.view-more-btn:hover {
+  background-color: transparent;
+}
+
+/* Container for hover effect */
+.hover-effect1 {
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
+  width: max-content;
+}
+
+/* Text lines */
+.line2 {
+  display: inline-block;
+  opacity: 1; /* Fully visible initially */
+  transition: opacity 0.5s ease; /* Smooth hiding effect */
+  font-weight: bold; 
+  background: linear-gradient(to right, #FF4581, #7445FF); 
+  -webkit-background-clip: text; 
+  background-clip: none; 
+  color: transparent;
+}
+
+/* Hidden state triggered by JavaScript */
+.line2.hidden {
+  opacity: 0; /* Invisible */
+}
+
 .link:hover{
   transform: scale(1.1);
   box-shadow: 0 0 0.3rem 0.01rem aqua;

@@ -110,3 +110,18 @@ const handleScroll = () => {
 window.addEventListener('scroll', () => {
   requestAnimationFrame(handleScroll);
 });
+
+// Select all elements with the class 'line2'
+const lines = document.querySelectorAll('.line2');
+const hoverEffect = document.querySelector('.link2-container');
+
+// Add hover event listener to the container
+hoverEffect.addEventListener('mouseenter', () => {
+  // Hide lines
+  lines.forEach(line => line.classList.add('hidden'));
+  
+  // Show lines after a delay (e.g., 3 seconds)
+  setTimeout(() => {
+    lines.forEach(line => line.classList.remove('hidden'));
+  }, 2000); // 3 seconds delay
+});
