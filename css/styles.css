@@ -411,11 +411,11 @@ input, textarea {
 
 /* Button styling */
 .view-more-btn {
-  align-self: flex-end;
+  align-self:center;
   padding: 10px 15px;
-  background-color: #00ffff;
+  background-color: #2A2A2A;
   color: white;
-  border: none;
+  border: 1px solid aqua;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
@@ -617,7 +617,7 @@ input, textarea {
   opacity: 0.5; /* Fade content */
 }
 
-.view-more-btn {
+.view-more-btn1 {
   color: white;
   padding: 8px 12px;
   border-radius: 5px;
