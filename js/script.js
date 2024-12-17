@@ -26,27 +26,6 @@ if (progress < 100) {
 }
 }, 300); // Interval: every 300ms
 
-function sendEmail(event) {
-  event.preventDefault(); // Prevents the form from reloading the page
-  
-  // Get form values
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value;
-  
-  // Construct the mailto URL
-  const mailtoLink = `mailto:vedant.pillai@somaiya.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-  )}`;
-  
-  // Open the mail client
-  window.location.href = mailtoLink;
-  
-  // Optionally, display a message to the user
-  alert('Your email client will open to send the message.');
-}
-
 // Helper function to check if an element is in the viewport
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
