@@ -301,11 +301,11 @@ input, textarea {
   border: 1px solid #282828;
   border-radius: 8px;
   flex-direction: column;
-  height: 150px;
+  height: 250px;
   padding: 20px;
   text-align: center;
   transition: transform .3s ease, box-shadow .3s ease;
-  width: 150px;
+  width: 250px;
   overflow: hidden;
 }
 
