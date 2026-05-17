@@ -1,496 +1,598 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vedant Pillai - Cybersecurity Professional | VAPT Specialist | Security Researcher">
-    <meta name="keywords" content="cybersecurity, VAPT, penetration testing, security researcher, bug bounty">
-    <meta name="author" content="Vedant Pillai">
-    <title>Vedant Pillai | Cybersecurity Professional</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vedant Pillai — Cybersecurity Professional, VAPT Specialist & Security Researcher" />
+  <title>Vedant Pillai — Titan-Hack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
-                <img src="Other_files/Logo.png" alt="Titan-Hack Logo" style="height: 40px; width: auto; cursor: pointer;" id="logoImage">
+
+  <!-- Animated background -->
+  <div class="bg-mesh"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Custom cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="#home" class="nav-brand" id="logoLink">
+        <img src="Other_files/Logo.png" alt="Titan-Hack" id="logoImage" />
+      </a>
+      <ul class="nav-items" id="navMenu">
+        <li><a href="#about"     class="nl">About</a></li>
+        <li><a href="#skills"    class="nl">Skills</a></li>
+        <li><a href="#vulnerability-expertise" class="nl">Expertise</a></li>
+        <li><a href="#experience" class="nl">Experience</a></li>
+        <li><a href="#projects"  class="nl">Projects</a></li>
+        <li><a href="#blogs"     class="nl">Blogs</a></li>
+        <li><a href="#achievements" class="nl">Achievements</a></li>
+        <li><a href="#certifications" class="nl">Certs</a></li>
+        <li><a href="#contact"   class="nl">Contact</a></li>
+      </ul>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <span class="badge-pulse"></span>
+        Available for opportunities
+      </div>
+
+      <h1 class="hero-title">
+        <span class="ht-line"><span class="ht-word">Vedant</span></span>
+        <span class="ht-line"><span class="ht-word delay-a">Pillai</span></span>
+      </h1>
+
+      <div class="hero-alias hero-anim delay-b">
+        <span class="mono">//</span> Titan-Hack
+      </div>
+
+      <p class="hero-roles hero-anim delay-c">
+        <span class="role-chip">Cybersecurity Professional</span>
+        <span class="role-sep">·</span>
+        <span class="role-chip">VAPT Specialist</span>
+        <span class="role-sep">·</span>
+        <span class="role-chip">Security Researcher</span>
+      </p>
+
+      <p class="hero-desc hero-anim delay-d">
+        Specializing in vulnerability assessment, penetration testing, and security research.
+        Passionate about discovering and mitigating vulnerabilities to protect digital assets.
+      </p>
+
+      <div class="hero-actions hero-anim delay-e">
+        <a href="#contact"  class="cta-primary">Get In Touch</a>
+        <a href="#projects" class="cta-secondary">View Work</a>
+        <a href="./Other_files/Resume.pdf" download="Vedant_Pillai_Resume.pdf" class="cta-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Resume
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Terminal window decoration -->
+    <div class="hero-terminal hero-anim delay-c">
+      <div class="term-bar">
+        <span class="term-btn r"></span>
+        <span class="term-btn y"></span>
+        <span class="term-btn g"></span>
+        <span class="term-title">titan-hack ~ bash</span>
+      </div>
+      <div class="term-body">
+        <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd typed-text"></span><span class="term-cursor">▋</span></div>
+        <div class="term-output" id="term-output"></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">01</span>
+        <h2 class="s-title">About Me</h2>
+        <div class="s-line"></div>
+      </div>
+      <div class="about-layout">
+        <div class="about-photo">
+          <div class="photo-glow"></div>
+          <img src="Other_files/ved_pro_photo.jpg" alt="Vedant Pillai" />
+          <div class="photo-border"></div>
+        </div>
+        <div class="about-info">
+          <h3>Cybersecurity Enthusiast &amp; Student</h3>
+          <p>
+            Pursuing B.Tech in Computer Engineering (CGPA: <mark>9.0</mark>) with a specialization in Cybersecurity from K.J. Somaiya Institute of Technology. As a VAPT Intern at SecurDefense, I identified 15+ critical vulnerabilities and earned Hall of Fame recognition from IBM, Duke University, WHO, Cisco, and the US Department of Health and Human Services.
+          </p>
+          <div class="counters">
+            <div class="counter-item">
+              <strong class="counter-val" data-target="9.0" data-decimal="1">0</strong>
+              <span>CGPA</span>
+            </div>
+            <div class="counter-item">
+              <strong class="counter-val" data-target="15" data-suffix="+">0</strong>
+              <span>Vulnerabilities</span>
+            </div>
+            <div class="counter-item">
+              <strong class="counter-val" data-target="6">0</strong>
+              <span>Hall of Fame</span>
+            </div>
+            <div class="counter-item">
+              <strong class="counter-val" data-target="3">0</strong>
+              <span>Certifications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section id="skills" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">02</span>
+        <h2 class="s-title">Skills</h2>
+        <div class="s-line"></div>
+      </div>
+      <div class="skills-layout">
+
+        <div class="skill-card">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Security Tools</h4>
+          <ul>
+            <li><span>Burp Suite</span></li>
+            <li><span>Nmap</span></li>
+            <li><span>Nessus</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h4>Programming</h4>
+          <ul>
+            <li><span>Python</span></li>
+            <li><span>Bash Scripting</span></li>
+            <li><span>JavaScript</span></li>
+            <li><span>SQL</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h4>Security Domains</h4>
+          <ul>
+            <li><span>VAPT</span></li>
+            <li><span>Web Application Security</span></li>
+            <li><span>Network Protocols</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="sk-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          </div>
+          <h4>Dev Tools</h4>
+          <ul>
+            <li><span>Git &amp; GitHub</span></li>
+            <li><span>Linux</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERTISE ═══════════════ -->
+  <section id="vulnerability-expertise" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">03</span>
+        <h2 class="s-title">Vulnerability Expertise</h2>
+        <div class="s-line"></div>
+      </div>
+      <p class="s-intro">Hands-on proficiency across key vulnerability classes, built through real-world VAPT engagements and security research.</p>
+      <div class="bars" id="bars-container">
+        <div class="bar-row" data-pct="77">
+          <div class="bar-meta"><span>SQL Injection</span><span class="bar-pct mono">77%</span></div>
+          <div class="bar-bg"><div class="bar-fg" style="--p:77%"></div></div>
+        </div>
+        <div class="bar-row" data-pct="90">
+          <div class="bar-meta"><span>Cross-Site Scripting (XSS)</span><span class="bar-pct mono">90%</span></div>
+          <div class="bar-bg"><div class="bar-fg" style="--p:90%"></div></div>
+        </div>
+        <div class="bar-row" data-pct="85">
+          <div class="bar-meta"><span>Cross-Site Request Forgery (CSRF)</span><span class="bar-pct mono">85%</span></div>
+          <div class="bar-bg"><div class="bar-fg" style="--p:85%"></div></div>
+        </div>
+        <div class="bar-row" data-pct="88">
+          <div class="bar-meta"><span>Authentication Bypass</span><span class="bar-pct mono">88%</span></div>
+          <div class="bar-bg"><div class="bar-fg" style="--p:88%"></div></div>
+        </div>
+        <div class="bar-row" data-pct="90">
+          <div class="bar-meta"><span>Misconfiguration</span><span class="bar-pct mono">90%</span></div>
+          <div class="bar-bg"><div class="bar-fg" style="--p:90%"></div></div>
+        </div>
+        <div class="bar-row" data-pct="80">
+          <div class="bar-meta"><span>Injection Attacks</span><span class="bar-pct mono">80%</span></div>
+          <div class="bar-bg"><div class="bar-fg" style="--p:80%"></div></div>
+        </div>
+        <div class="bar-row" data-pct="70">
+          <div class="bar-meta"><span>Business Logic Flaws</span><span class="bar-pct mono">70%</span></div>
+          <div class="bar-bg"><div class="bar-fg" style="--p:70%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+  <section id="experience" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">04</span>
+        <h2 class="s-title">Experience</h2>
+        <div class="s-line"></div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-accent"></div>
+        <div class="exp-content">
+          <div class="exp-top-row">
+            <div>
+              <h3>VAPT Intern</h3>
+              <p class="exp-company">SecurDefense, Pune</p>
+              <p class="exp-meta mono">Remote &nbsp;·&nbsp; April 2025 – October 2025</p>
+            </div>
+            <span class="exp-badge">✓ Completed</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Conducted vulnerability scans of web applications, identifying and reporting 15+ critical vulnerabilities including SQL injection and XSS flaws</li>
+            <li>Performed in-depth scanning with Nessus and Nmap, finding 30+ open ports and 5+ misconfigured services</li>
+            <li>Achieved 80% reduction in attack surface and improved firewall configuration within 48 hours of reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section id="projects" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">05</span>
+        <h2 class="s-title">Projects</h2>
+        <div class="s-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <article class="proj-card">
+          <div class="proj-card-glow"></div>
+          <div class="proj-top">
+            <span class="proj-lang">Python</span>
+            <a href="https://github.com/Codewith-Vedant/Git-Recon" target="_blank" class="proj-gh-link" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
             </a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#vulnerability-expertise" class="nav-link">Expertise</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#blogs" class="nav-link">Blogs</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+          </div>
+          <h3>Git-Recon</h3>
+          <p>OSINT tool for scanning GitHub repos to identify exposed credentials and sensitive API keys.</p>
+          <ul class="proj-points">
+            <li>300+ API keys and 50+ plaintext passwords identified</li>
+            <li>5 valid sensitive API keys reported successfully</li>
+            <li>Significantly boosted recon effectiveness during pentests</li>
+          </ul>
+          <div class="proj-footer">
+            <span class="proj-date mono">Aug 2025</span>
+          </div>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-card-glow"></div>
+          <div class="proj-top">
+            <span class="proj-lang">Python</span>
+            <a href="https://github.com/Codewith-Vedant/Python-Keylogger" target="_blank" class="proj-gh-link" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </a>
+          </div>
+          <h3>Python Keylogger</h3>
+          <p>Captures keystrokes and clipboard data with real-time exfiltration via POST requests.</p>
+          <ul class="proj-points">
+            <li>&lt;1s latency in real-time data transmission</li>
+            <li>Simulated real-world attack scenarios for pentest demos</li>
+          </ul>
+          <div class="proj-footer">
+            <span class="proj-date mono">Jul 2025</span>
+          </div>
+        </article>
+
+        <article class="proj-card">
+          <div class="proj-card-glow"></div>
+          <div class="proj-top">
+            <span class="proj-lang">Bash</span>
+            <a href="https://github.com/Codewith-Vedant/LeakFox" target="_blank" class="proj-gh-link" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </a>
+          </div>
+          <h3>LeakFox</h3>
+          <p>Automated API key validation covering 75+ services with near-instant detection.</p>
+          <ul class="proj-points">
+            <li>98% detection accuracy with &lt;10s validation per key</li>
+            <li>Reduced manual effort by 80%</li>
+          </ul>
+          <div class="proj-footer">
+            <span class="proj-date mono">May 2025</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ BLOGS ═══════════════ -->
+  <section id="blogs" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">06</span>
+        <h2 class="s-title">Blogs &amp; Writeups</h2>
+        <div class="s-line"></div>
+      </div>
+      <p class="s-intro">CTF walkthroughs and technical write-ups published on Medium's InfoSec Write-ups.</p>
+      <div class="blog-list">
+
+        <a href="https://medium.com/bugbountywriteup/oubliette-a-ctf-machine-write-up-efd95e566a73" target="_blank" class="blog-item">
+          <div class="bi-left">
+            <span class="bi-tag">CTF Walkthrough</span>
+            <h4>Oubliette: A CTF Machine Walkthrough</h4>
+            <span class="bi-platform">InfoSec Write-ups · Medium</span>
+          </div>
+          <span class="bi-arrow">↗</span>
+        </a>
+
+        <a href="https://medium.com/bugbountywriteup/pentathon-2025-web-challenge-unblocker-0223aad05deb" target="_blank" class="blog-item">
+          <div class="bi-left">
+            <span class="bi-tag">Web Challenge</span>
+            <h4>Pentathon 2025 Web Challenge — Unblocker</h4>
+            <span class="bi-platform">InfoSec Write-ups · Medium</span>
+          </div>
+          <span class="bi-arrow">↗</span>
+        </a>
+
+        <a href="https://medium.com/bugbountywriteup/paginator-v2-nullcon-ctf-2025-7bc5f8f445b4" target="_blank" class="blog-item">
+          <div class="bi-left">
+            <span class="bi-tag">CTF Challenge</span>
+            <h4>Paginator v2 — NullCon CTF 2025</h4>
+            <span class="bi-platform">InfoSec Write-ups · Medium</span>
+          </div>
+          <span class="bi-arrow">↗</span>
+        </a>
+
+        <a href="https://medium.com/bugbountywriteup/lesson-learned-tryhackme-machine-writeup-100510a85f8d" target="_blank" class="blog-item">
+          <div class="bi-left">
+            <span class="bi-tag">Machine Writeup</span>
+            <h4>Lesson Learned? — TryHackMe Machine Writeup</h4>
+            <span class="bi-platform">InfoSec Write-ups · Medium</span>
+          </div>
+          <span class="bi-arrow">↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ACHIEVEMENTS ═══════════════ -->
+  <section id="achievements" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">07</span>
+        <h2 class="s-title">Achievements</h2>
+        <div class="s-line"></div>
+      </div>
+      <div class="ach-grid">
+
+        <!-- 1. Cisco — latest -->
+        <div class="ach-card">
+          <div class="ach-glow"></div>
+          <div class="ach-emoji">🎖</div>
+          <div class="ach-text">
+            <h4>Hall of Fame — Cisco</h4>
+            <p>Responsible Disclosure Program</p>
+            <span class="mono">2025</span>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7414374959176732672/" target="_blank" class="ach-link">View on LinkedIn ↗</a>
+          </div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-greeting">👋 Hello, I'm</div>
-            <h1 class="hero-title">Vedant Pillai</h1>
-            <div class="hero-alias">Titan-Hack</div>
-            <p class="hero-subtitle">Cybersecurity Professional | VAPT Specialist | Security Researcher</p>
-            <p class="hero-description">
-                Specializing in vulnerability assessment, penetration testing, and security research. 
-                Passionate about discovering and mitigating security vulnerabilities to protect digital assets.
-            </p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#projects" class="btn btn-secondary">View My Work</a>
-                <a href="./Other_files/Resume.pdf" download="Vedant_Pillai_Resume.pdf" class="btn btn-secondary">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Download Resume
-                </a>
-            </div>
+        <!-- 2. US HHS -->
+        <div class="ach-card">
+          <div class="ach-glow"></div>
+          <div class="ach-emoji">🎖</div>
+          <div class="ach-text">
+            <h4>Hall of Fame — US HHS</h4>
+            <p>US Dept. of Health &amp; Human Services</p>
+            <span class="mono">2025</span>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7407836933328105472/" target="_blank" class="ach-link">View on LinkedIn ↗</a>
+          </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-image-container">
-                <img src="Other_files/ved_pro_photo.jpg" alt="Vedant Pillai - Professional Photo" class="about-profile-photo">
-            </div>
-            <div class="about-text">
-                <h3>Cybersecurity Enthusiast &amp; Student</h3>
-                <p>
-                    I'm pursuing B. Tech in Computer Engineering (CGPA: 9.0) with specialization in <strong style="color: var(--cyber-cyan);">Cybersecurity</strong> from K.J. Somaiya Institute of Technology. During my time as a VAPT Intern at SecurDefense, I've identified 15+ critical vulnerabilities and earned recognition through multiple Hall of Fame awards from organizations like IBM, Duke University, and WHO.
-                </p>
-
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">9.0</div>
-                        <div class="stat-label">CGPA</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Vulnerabilities Found</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Hall of Fame</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Certifications</div>
-                    </div>
-                </div>
-            </div>
+        <!-- 3. IBM -->
+        <div class="ach-card featured">
+          <div class="ach-glow"></div>
+          <div class="ach-emoji">🏆</div>
+          <div class="ach-text">
+            <h4>IBM Bug Bounty</h4>
+            <p>Sensitive Data Disclosure via HackerOne</p>
+            <span class="mono">July 2025</span>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7349254281570496513/" target="_blank" class="ach-link">View on LinkedIn ↗</a>
+          </div>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-        <h2 class="section-title">Skills &amp; Expertise</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3><span class="skill-icon">🛡️</span> Security Tools</h3>
-                <div class="skill-list">
-                    <div class="skill-item">Burp Suite</div>
-                    <div class="skill-item">Nmap</div>
-                    <div class="skill-item">Nessus</div>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3><span class="skill-icon">💻</span> Programming</h3>
-                <div class="skill-list">
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">Bash Scripting</div>
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">SQL</div>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3><span class="skill-icon">🔍</span> Security Domains</h3>
-                <div class="skill-list">
-                    <div class="skill-item">VAPT</div>
-                    <div class="skill-item">Web Application Security</div>
-                    <div class="skill-item">Network Protocols</div>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h3><span class="skill-icon">⚙️</span> Development Tools</h3>
-                <div class="skill-list">
-                    <div class="skill-item">Git &amp; Github</div>
-                    <div class="skill-item">Linux</div>
-                </div>
-            </div>
+        <!-- 4. Duke University -->
+        <div class="ach-card">
+          <div class="ach-glow"></div>
+          <div class="ach-emoji">🎖</div>
+          <div class="ach-text">
+            <h4>Hall of Fame — Duke University</h4>
+            <p>Responsible Disclosure Program</p>
+            <span class="mono">May 2025</span>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7328404786137985026/" target="_blank" class="ach-link">View on LinkedIn ↗</a>
+          </div>
         </div>
-    </section>
 
-    <!-- Vulnerability Expertise Section -->
-    <section class="section" id="vulnerability-expertise">
-        <h2 class="section-title">Vulnerability Expertise</h2>
-        <p class="vulnerability-expertise-intro">
-            Through hands-on experience in penetration testing and security research, I've developed deep expertise 
-            in identifying and exploiting various vulnerability types. Here's my proficiency across different security domains.
+        <!-- 5. WHO -->
+        <div class="ach-card">
+          <div class="ach-glow"></div>
+          <div class="ach-emoji">🎖</div>
+          <div class="ach-text">
+            <h4>Hall of Fame — WHO</h4>
+            <p>World Health Organization</p>
+            <span class="mono">December 2024</span>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7269773033869856768/" target="_blank" class="ach-link">View on LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <!-- 6. Elsevier — oldest -->
+        <div class="ach-card">
+          <div class="ach-glow"></div>
+          <div class="ach-emoji">🎖</div>
+          <div class="ach-text">
+            <h4>Hall of Fame — Elsevier</h4>
+            <p>Responsible Disclosure Program</p>
+            <span class="mono">November 2024</span>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7257802909403279360/" target="_blank" class="ach-link">View on LinkedIn ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
+  <section id="certifications" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">08</span>
+        <h2 class="s-title">Certifications</h2>
+        <div class="s-line"></div>
+      </div>
+      <div class="cert-list">
+
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div class="cert-info">
+            <h4>CAP v2</h4>
+            <p>The SecOps Group</p>
+          </div>
+          <div class="cert-meta">
+            <span class="mono">Aug 2025</span>
+            <span class="cert-score">73%</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">🏅</div>
+          <div class="cert-info">
+            <h4>Top 100 Certificate — GAH 2024</h4>
+            <p>CCoE Hyderabad</p>
+          </div>
+          <div class="cert-meta">
+            <span class="mono">Aug 2024</span>
+            <span class="cert-score">Rank 45</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">☁️</div>
+          <div class="cert-info">
+            <h4>SC-900</h4>
+            <p>Microsoft</p>
+          </div>
+          <div class="cert-meta">
+            <span class="mono">Jun 2023</span>
+            <span class="cert-score">70%</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact" class="section reveal">
+    <div class="s-wrap">
+      <div class="s-head">
+        <span class="s-num">09</span>
+        <h2 class="s-title">Get In Touch</h2>
+        <div class="s-line"></div>
+      </div>
+      <div class="contact-layout">
+        <p class="contact-desc">
+          Open to new opportunities, collaborations, and security projects.<br>
+          Reach out — I usually respond within 24 hours.
         </p>
-        <div class="vulnerability-grid">
-            <div class="vulnerability-item" data-percentage="77">
-                <div class="vulnerability-header">
-                    <div class="vulnerability-name">SQL Injection</div>
-                    <div class="vulnerability-percentage">77%</div>
-                </div>
-                <div class="vulnerability-bar-container">
-                    <div class="vulnerability-bar" style="--skill-width: 77%;"></div>
-                </div>
-            </div>
-
-            <div class="vulnerability-item" data-percentage="90">
-                <div class="vulnerability-header">
-                    <div class="vulnerability-name">Cross-Site Scripting (XSS)</div>
-                    <div class="vulnerability-percentage">90%</div>
-                </div>
-                <div class="vulnerability-bar-container">
-                    <div class="vulnerability-bar" style="--skill-width: 90%;"></div>
-                </div>
-            </div>
-
-            <div class="vulnerability-item" data-percentage="85">
-                <div class="vulnerability-header">
-                    <div class="vulnerability-name">Cross-Site Request Forgery (CSRF)</div>
-                    <div class="vulnerability-percentage">85%</div>
-                </div>
-                <div class="vulnerability-bar-container">
-                    <div class="vulnerability-bar" style="--skill-width: 85%;"></div>
-                </div>
-            </div>
-
-            <div class="vulnerability-item" data-percentage="88">
-                <div class="vulnerability-header">
-                    <div class="vulnerability-name">Authentication Bypass</div>
-                    <div class="vulnerability-percentage">88%</div>
-                </div>
-                <div class="vulnerability-bar-container">
-                    <div class="vulnerability-bar" style="--skill-width: 88%;"></div>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="vulnerability-item" data-percentage="90">
-                <div class="vulnerability-header">
-                    <div class="vulnerability-name">Misconfiguration</div>
-                    <div class="vulnerability-percentage">90%</div>
-                </div>
-                <div class="vulnerability-bar-container">
-                    <div class="vulnerability-bar" style="--skill-width: 90%;"></div>
-                </div>
-            </div>
-
-            <div class="vulnerability-item" data-percentage="80">
-                <div class="vulnerability-header">
-                    <div class="vulnerability-name">Injection Attacks</div>
-                    <div class="vulnerability-percentage">80%</div>
-                </div>
-                <div class="vulnerability-bar-container">
-                    <div class="vulnerability-bar" style="--skill-width: 80%;"></div>
-                </div>
-            </div>
-
-            <div class="vulnerability-item" data-percentage="70">
-                <div class="vulnerability-header">
-                    <div class="vulnerability-name">Business Logic Flaws</div>
-                    <div class="vulnerability-percentage">70%</div>
-                </div>
-                <div class="vulnerability-bar-container">
-                    <div class="vulnerability-bar" style="--skill-width: 70%;"></div>
-                </div>
-            </div>
-
-
+        <a href="mailto:vspillai0701@gmail.com" class="contact-email-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          vspillai0701@gmail.com
+        </a>
+        <div class="contact-socials">
+          <a href="https://github.com/Codewith-Vedant" target="_blank" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/vedant-pillai-842ba625a/" target="_blank" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://medium.com/@vspillai0701" target="_blank" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+            Medium
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-        <h2 class="section-title">Past Work Experience</h2>
-        <div class="experience-container">
-            <div class="experience-card">
-                <div class="experience-header">
-                    <h3 class="experience-title">VAPT Intern <span class="status status--success" style="margin-left: 0.5rem; font-size: 0.75rem; padding: 0.4rem 0.8rem;">Completed</span></h3>
-                    <div class="experience-company">SecurDefense, Pune</div>
-                    <div class="experience-meta">
-                        <span>📍 Remote</span>
-                        <span>📅 April 2025 – October 2025</span>
-                    </div>
-                </div>
-                <ul class="experience-achievements">
-                    <li>Conducted regular vulnerability scans of web applications, identifying and reporting 15+ critical vulnerabilities including SQL injection and cross-site scripting (XSS) flaws</li>
-                    <li>Performed in-depth scanning with tools like Nessus, Nmap and found 30+ open ports and 5+ misconfigured services</li>
-                    <li>Achieved an 80% reduction in attack surface and improved firewall configuration within 48 hours of reporting</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <span>Vedant Pillai &nbsp;·&nbsp; Titan-Hack</span>
+      <span class="mono">© 2026</span>
+    </div>
+  </footer>
 
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon">📁</div>
-                    <div class="project-links">
-                        <a href="https://github.com/Codewith-Vedant" target="_blank" class="project-link" aria-label="GitHub">🔗</a>
-                    </div>
-                </div>
-                <h3 class="project-title">Git-Recon</h3>
-                <div class="project-tech">Python | August 2025</div>
-                <p class="project-description">
-                    OSINT tool for scanning GitHub repos to identify exposed credentials
-                </p>
-                <ul class="project-achievements">
-                    <li>Identified 300+ API keys and 50+ plaintext passwords</li>
-                    <li>Boosted recon effectiveness in pentests</li>
-                    <li>Reported 5 valid sensitive API keys successfully</li>
-                </ul>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon">⌨️</div>
-                    <div class="project-links">
-                        <a href="https://github.com/Codewith-Vedant" target="_blank" class="project-link" aria-label="GitHub">🔗</a>
-                    </div>
-                </div>
-                <h3 class="project-title">Python Keylogger</h3>
-                <div class="project-tech">Python | July 2025</div>
-                <p class="project-description">
-                    Captures keystrokes and clipboard data with real-time exfiltration
-                </p>
-                <ul class="project-achievements">
-                    <li>Exfiltrated data via POST requests to custom endpoints</li>
-                    <li>Simulated real-world attack scenarios</li>
-                    <li>Demonstrated less than 1s latency in real-time data transmission</li>
-                </ul>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-icon">🦊</div>
-                    <div class="project-links">
-                        <a href="https://github.com/Codewith-Vedant" target="_blank" class="project-link" aria-label="GitHub">🔗</a>
-                    </div>
-                </div>
-                <h3 class="project-title">LeakFox</h3>
-                <div class="project-tech">Bash | May 2025</div>
-                <p class="project-description">
-                    Automated API key validation tool for 75+ services
-                </p>
-                <ul class="project-achievements">
-                    <li>Achieved 98% detection accuracy with &lt;10s validation time per key</li>
-                    <li>Streamlined exposure analysis</li>
-                    <li>Reduced manual effort by 80%</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blogs Section -->
-    <section class="section" id="blogs">
-        <h2 class="section-title">Technical Blogs &amp; Writeups</h2>
-        <p class="blogs-intro">
-            I share my cybersecurity knowledge and CTF experiences through detailed writeups and technical blogs published on Medium's InfoSec Write-ups.
-        </p>
-        <div class="blogs-grid">
-            <!-- Blog 1 -->
-            <div class="blog-card">
-                <div class="blog-icon">📝</div>
-                <div class="blog-category">CTF Walkthrough</div>
-                <h3 class="blog-title">Oubliette: A CTF Machine Walkthrough</h3>
-                <div class="blog-publication">📰 InfoSec Write-ups</div>
-                <a href="https://medium.com/bugbountywriteup/oubliette-a-ctf-machine-write-up-efd95e566a73" target="_blank" class="blog-link">
-                    Read Article →
-                </a>
-            </div>
-
-            <!-- Blog 2 -->
-            <div class="blog-card">
-                <div class="blog-icon">🌐</div>
-                <div class="blog-category">Web Challenge</div>
-                <h3 class="blog-title">Pentathon 2025 Web Challenge — Unblocker</h3>
-                <div class="blog-publication">📰 InfoSec Write-ups</div>
-                <a href="https://medium.com/bugbountywriteup/pentathon-2025-web-challenge-unblocker-0223aad05deb" target="_blank" class="blog-link">
-                    Read Article →
-                </a>
-            </div>
-
-            <!-- Blog 3 -->
-            <div class="blog-card">
-                <div class="blog-icon">🏁</div>
-                <div class="blog-category">CTF Challenge</div>
-                <h3 class="blog-title">Paginator v2- NullCon CTF 2025</h3>
-                <div class="blog-publication">📰 InfoSec Write-ups</div>
-                <a href="https://medium.com/bugbountywriteup/paginator-v2-nullcon-ctf-2025-7bc5f8f445b4" target="_blank" class="blog-link">
-                    Read Article →
-                </a>
-            </div>
-
-            <!-- Blog 4 -->
-            <div class="blog-card">
-                <div class="blog-icon">🖥️</div>
-                <div class="blog-category">Machine Writeup</div>
-                <h3 class="blog-title">Lesson Learned? Tryhackme Machine Writeup</h3>
-                <div class="blog-publication">📰 InfoSec Write-ups</div>
-                <a href="https://medium.com/bugbountywriteup/lesson-learned-tryhackme-machine-writeup-100510a85f8d" target="_blank" class="blog-link">
-                    Read Article →
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section class="section" id="achievements">
-        <h2 class="section-title">Achievements &amp; Recognition</h2>
-        <div class="achievements-grid">
-            <div class="achievement-card">
-                <div class="achievement-icon">🏆</div>
-                <h3 class="achievement-title">IBM Bug Bounty - Sensitive Data Disclosure</h3>
-                <div class="achievement-platform">HackerOne</div>
-                <div class="achievement-date">July 2025</div>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🎖️</div>
-                <h3 class="achievement-title">Hall Of Fame</h3>
-                <div class="achievement-platform">Duke University</div>
-                <div class="achievement-date">May 2025</div>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🎖️</div>
-                <h3 class="achievement-title">Hall Of Fame</h3>
-                <div class="achievement-platform">World Health Organization</div>
-                <div class="achievement-date">December 2024</div>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🎖️</div>
-                <h3 class="achievement-title">Hall Of Fame</h3>
-                <div class="achievement-platform">Elsevier</div>
-                <div class="achievement-date">November 2024</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section class="section" id="certifications">
-        <h2 class="section-title">Certifications</h2>
-        <div class="certifications-grid">
-            <div class="certification-card">
-                <h3 class="certification-name">CAP v2</h3>
-                <div class="certification-org">The SecOps Group</div>
-                <div class="certification-meta">
-                    <span>📅 August 2025</span>
-                    <span>📊 Score: 73%</span>
-                </div>
-            </div>
-
-            <div class="certification-card">
-                <h3 class="certification-name">Top 100 Certificate in GAH 2024</h3>
-                <div class="certification-org">CCoE Hyderabad</div>
-                <div class="certification-meta">
-                    <span>📅 August 2024</span>
-                    <span>🏅 Rank: 45</span>
-                </div>
-            </div>
-
-            <div class="certification-card">
-                <h3 class="certification-name">SC900</h3>
-                <div class="certification-org">Microsoft</div>
-                <div class="certification-meta">
-                    <span>📅 June 2023</span>
-                    <span>📊 Score: 70%</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section class="section" id="publications">
-        <h2 class="section-title">Publications</h2>
-        <div class="publications-list">
-            <div class="publication-card">
-                <h3 class="publication-title">
-                    A Dual-Architecture hashing framework with Interleaved Block Mixing for Enhanced Security and Entropy
-                </h3>
-                <div class="publication-publisher">📄 SPCSJ</div>
-            </div>
-
-            <div class="publication-card">
-                <h3 class="publication-title">
-                    Web-Kavach: Shielding Your Digital Life
-                </h3>
-                <div class="publication-publisher">📄 IEEE</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <p class="contact-text">
-                I'm always open to discussing new opportunities, collaborations, or cybersecurity projects. 
-                Whether you have a question or just want to connect, feel free to reach out!
-            </p>
-
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">
-                        <a href="mailto:vspillai0701@gmail.com">vspillai0701@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="social-links">
-                <a href="https://github.com/Codewith-Vedant" target="_blank" class="social-link" aria-label="GitHub">💻</a>
-                <a href="https://www.linkedin.com/in/vedant-pillai-842ba625a/" target="_blank" class="social-link" aria-label="LinkedIn">💼</a>
-                <a href="https://medium.com/@vedant0701" target="_blank" class="social-link" aria-label="Medium">📝</a>
-                <a href="mailto:vspillai0701@gmail.com" class="social-link" aria-label="Email">📧</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p class="footer-text">
-            Designed &amp; Built by <a href="#home">Vedant Pillai</a> | © 2025
-        </p>
-    </footer>
-    <script src="./js/script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
